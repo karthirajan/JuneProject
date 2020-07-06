@@ -89,6 +89,58 @@ public class AddCustomerSteps {
 		driver.findElement(By.id("telephoneno")).sendKeys(cusDetails.get("phno"));
 		
 	}
+	
+	@When("User enters all the feilds by using 2dim list")
+	public void user_enters_all_the_feilds_by_using_2dim_list(io.cucumber.datatable.DataTable dataTable) throws InterruptedException {
+	    
+		List<List<String>> cusDetails = dataTable.asLists();
+		
+		 handleFrame();
+			
+			driver.findElement(By.xpath("(//label[@for='done'])[1]")).click();
+			driver.findElement(By.id("fname")).sendKeys(cusDetails.get(1).get(0));
+			driver.findElement(By.id("lname")).sendKeys(cusDetails.get(1).get(1));
+			driver.findElement(By.id("email")).sendKeys(cusDetails.get(1).get(2));
+			driver.findElement(By.name("addr")).sendKeys(cusDetails.get(3).get(3));
+			driver.findElement(By.id("telephoneno")).sendKeys(cusDetails.get(1).get(4));
+		
+		
+	}
+	
+	@When("User enters all the feilds by using 2dim map")
+	public void user_enters_all_the_feilds_by_using_2dim_map(io.cucumber.datatable.DataTable dataTable) throws InterruptedException {
+	    
+		List<Map<String, String>> cusDetails = dataTable.asMaps();
+		
+		 handleFrame();
+			
+			driver.findElement(By.xpath("(//label[@for='done'])[1]")).click();
+			driver.findElement(By.id("fname")).sendKeys(cusDetails.get(2).get("Fname"));
+			driver.findElement(By.id("lname")).sendKeys(cusDetails.get(1).get("Lname"));
+			driver.findElement(By.id("email")).sendKeys(cusDetails.get(2).get("Mail"));
+			driver.findElement(By.name("addr")).sendKeys(cusDetails.get(3).get("Address"));
+			driver.findElement(By.id("telephoneno")).sendKeys(cusDetails.get(1).get("Phno"));
+		
+		
+	}
+	
+	@When("User enters all the feilds {string},{string},{string},{string},{string}")
+	public void user_enters_all_the_feilds(String fname, String lname, String mail, String address, String phno) throws InterruptedException {
+		
+		
+		 handleFrame();
+			
+			driver.findElement(By.xpath("(//label[@for='done'])[1]")).click();
+			driver.findElement(By.id("fname")).sendKeys(fname);
+			driver.findElement(By.id("lname")).sendKeys(lname);
+			driver.findElement(By.id("email")).sendKeys(mail);
+			driver.findElement(By.name("addr")).sendKeys(address);
+			driver.findElement(By.id("telephoneno")).sendKeys(phno);
+		
+	    
+	}
+
+
 
 	@When("User click on submit button")
 	public void user_click_on_submit_button() {
