@@ -3,14 +3,14 @@ Feature: Add Customer
   User creating new account
 
  Scenario: Hardcoded
-    Given User launches telecom application
+    Given User launch telecom application
     And User navigates into add customer page
     When User enters all the feilds
     And User click on submit button
     Then User should be displayed customer id is generated
 
   Scenario: one dimensional list
-    Given User launches telecom application
+  Given User launch telecom application
     And User navigates into add customer page
     When User enters all the feilds by using 1dim list
       | soundar | rajan | sr@gmail.com | pvi | 8976436275 |
@@ -18,7 +18,7 @@ Feature: Add Customer
     Then User should be displayed customer id is generated
 
   Scenario: one dimensional map
-    Given User launches telecom application
+  Given User launch telecom application
     And User navigates into add customer page
     When User enters all the feilds by using 1dim map
       | fname | java           |
@@ -30,7 +30,7 @@ Feature: Add Customer
     Then User should be displayed customer id is generated
 
   Scenario: Two dimensional list
-    Given User launches telecom application
+  Given User launch telecom application
     And User navigates into add customer page
     When User enters all the feilds by using 2dim list
       | soundar | rajan | sr@gmail.com  | pvi | 8976436275 |
@@ -41,7 +41,7 @@ Feature: Add Customer
     Then User should be displayed customer id is generated
 
   Scenario: Two dimensional Map
-    Given User launches telecom application
+  Given User launch telecom application
     And User navigates into add customer page
     When User enters all the feilds by using 2dim map
       | Fname   | Lname | Mail          | Address | Phno       |
@@ -53,7 +53,7 @@ Feature: Add Customer
     Then User should be displayed customer id is generated
 
   Scenario Outline: by using outline
-    Given User launches telecom application
+  Given User launch telecom application
     And User navigates into add customer page
     When User enters all the feilds "<Fname>","<Lname>","<Mail>","<Address>","<Phno>"
     And User click on submit button
