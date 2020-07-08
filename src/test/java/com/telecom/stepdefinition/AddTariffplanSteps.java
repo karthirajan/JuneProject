@@ -8,10 +8,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 import io.cucumber.datatable.DataTable;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+
 
 public class AddTariffplanSteps {
 	
@@ -32,10 +33,10 @@ static WebDriver driver;
 
 	public void handleFrame() throws InterruptedException {
 		
-		Thread.sleep(10000);
+		/*Thread.sleep(10000);
 		driver.switchTo().frame("flow_close_btn_iframe");
 		driver.findElement(By.xpath("//div[@id='closeBtn']")).click();
-		driver.switchTo().defaultContent();
+		driver.switchTo().defaultContent();*/
 
 	}
 
@@ -70,7 +71,7 @@ static WebDriver driver;
 	
 	@When("User fills all the fields by using 1dim map")
 	public void user_fills_all_the_fields_by_using_1dim_map(DataTable datam) throws InterruptedException {
-		handleFrame();
+		//handleFrame();
 		Map<String, String> planDetails = datam.asMap(String.class, String.class);
 
 		driver.findElement(By.name("rental")).sendKeys(planDetails.get("rental"));
@@ -85,7 +86,7 @@ static WebDriver driver;
 	
 	@When("User fills all the fields by using 2dim list")
 	public void user_fills_all_the_fields_by_using_2dim_list(DataTable datal) throws InterruptedException {
-		handleFrame();
+		//handleFrame();
 		List<List<String>> plan = datal.asLists();
 
 		driver.findElement(By.name("rental")).sendKeys(plan.get(2).get(0));

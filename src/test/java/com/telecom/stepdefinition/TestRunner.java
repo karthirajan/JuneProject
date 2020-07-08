@@ -2,15 +2,18 @@ package com.telecom.stepdefinition;
 
 import org.junit.runner.RunWith;
 
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
+import cucumber.api.CucumberOptions;
+import cucumber.api.junit.Cucumber;
+
+
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="src//test//resources//Features//AddCustomer.feature",
+@CucumberOptions(features="src//test//resources//Features",
                   glue="com.telecom.stepdefinition",
                   dryRun=false,
                   plugin="html:target//Cucumber-html-reports",
-                  monochrome=true)
+                  monochrome=true,
+                  tags={"@sanity","@karthi"})
 
 
 public class TestRunner {

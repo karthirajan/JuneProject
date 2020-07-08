@@ -1,20 +1,36 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/Features/AddCustomer.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/test/resources/Features/AddCustomer.feature");
 formatter.feature({
   "name": "Add Customer",
   "description": "  User creating new account",
-  "keyword": "Feature"
+  "keyword": "Feature",
+  "tags": [
+    {
+      "name": "@sanity"
+    }
+  ]
 });
 formatter.scenario({
   "name": "Hardcoded",
   "description": "",
-  "keyword": "Scenario"
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@sanity"
+    },
+    {
+      "name": "@sanity"
+    },
+    {
+      "name": "@karthi"
+    }
+  ]
 });
 formatter.step({
   "name": "User launch telecom application",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "com.telecom.stepdefinition.AddTariffplanSteps.user_launch_telecom_application()"
+  "location": "AddTariffplanSteps.user_launch_telecom_application()"
 });
 formatter.result({
   "status": "passed"
@@ -24,7 +40,7 @@ formatter.step({
   "keyword": "And "
 });
 formatter.match({
-  "location": "com.telecom.stepdefinition.AddCustomerSteps.user_navigates_into_add_customer_page()"
+  "location": "AddCustomerSteps.user_navigates_into_add_customer_page()"
 });
 formatter.result({
   "status": "passed"
@@ -34,7 +50,7 @@ formatter.step({
   "keyword": "When "
 });
 formatter.match({
-  "location": "com.telecom.stepdefinition.AddCustomerSteps.user_enters_all_the_feilds()"
+  "location": "AddCustomerSteps.user_enters_all_the_feilds()"
 });
 formatter.result({
   "status": "passed"
@@ -44,7 +60,7 @@ formatter.step({
   "keyword": "And "
 });
 formatter.match({
-  "location": "com.telecom.stepdefinition.AddCustomerSteps.user_click_on_submit_button()"
+  "location": "AddCustomerSteps.user_click_on_submit_button()"
 });
 formatter.result({
   "status": "passed"
@@ -54,65 +70,7 @@ formatter.step({
   "keyword": "Then "
 });
 formatter.match({
-  "location": "com.telecom.stepdefinition.AddCustomerSteps.user_should_be_displayed_customer_id_is_generated()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.scenario({
-  "name": "one dimensional list",
-  "description": "",
-  "keyword": "Scenario"
-});
-formatter.step({
-  "name": "User launch telecom application",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "com.telecom.stepdefinition.AddTariffplanSteps.user_launch_telecom_application()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "User navigates into add customer page",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "com.telecom.stepdefinition.AddCustomerSteps.user_navigates_into_add_customer_page()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "User enters all the feilds by using 1dim list",
-  "rows": [
-    {}
-  ],
-  "keyword": "When "
-});
-formatter.match({
-  "location": "com.telecom.stepdefinition.AddCustomerSteps.user_enters_all_the_feilds_by_using_1dim_list(io.cucumber.datatable.DataTable)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "User click on submit button",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "com.telecom.stepdefinition.AddCustomerSteps.user_click_on_submit_button()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "User should be displayed customer id is generated",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "com.telecom.stepdefinition.AddCustomerSteps.user_should_be_displayed_customer_id_is_generated()"
+  "location": "AddCustomerSteps.user_should_be_displayed_customer_id_is_generated()"
 });
 formatter.result({
   "status": "passed"

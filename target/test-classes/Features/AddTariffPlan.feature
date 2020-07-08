@@ -16,6 +16,7 @@ Feature: Add Tariff Plan
     And User click on Tariff submit button
     Then User is displayed with the message tariff plan created
 
+
   Scenario: one dim map
     Given User launch telecom application
     And User navigates into tariff plan page
@@ -53,6 +54,7 @@ Feature: Add Tariff Plan
     And User click on Tariff submit button
     Then User is displayed with the message tariff plan created
 
+@sanity
   Scenario Outline: using outline
     Given User launch telecom application
     And User navigates into tariff plan page
