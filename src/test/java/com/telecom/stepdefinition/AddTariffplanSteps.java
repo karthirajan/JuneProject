@@ -5,9 +5,6 @@ import java.util.Map;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -16,27 +13,19 @@ import io.cucumber.datatable.DataTable;
 
 public class AddTariffplanSteps {
 	
-static WebDriver driver;
-	
-	@Given("User launch telecom application")
-	public void user_launch_telecom_application() {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Lenovo\\workspace\\May\\cucumber\\driver\\Chrome83\\chromedriver.exe");
-		driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.get("http://www.demo.guru99.com/telecom/");
-	}
+
 
 	@Given("User navigates into tariff plan page")
 	public void user_navigates_into_tariff_plan_page() {
-		driver.findElement(By.xpath("//a[text()='Add Tariff Plan']")).click();
+		Hooks.driver.findElement(By.xpath("//a[text()='Add Tariff Plan']")).click();
 	}
 
 	public void handleFrame() throws InterruptedException {
 		
 		/*Thread.sleep(10000);
-		driver.switchTo().frame("flow_close_btn_iframe");
-		driver.findElement(By.xpath("//div[@id='closeBtn']")).click();
-		driver.switchTo().defaultContent();*/
+		Hooks.driver.switchTo().frame("flow_close_btn_iframe");
+		Hooks.driver.findElement(By.xpath("//div[@id='closeBtn']")).click();
+		Hooks.driver.switchTo().defaultContent();*/
 
 	}
 
@@ -44,13 +33,13 @@ static WebDriver driver;
 	@When("User fills all the fields")
 	public void user_fills_all_the_fields() throws InterruptedException {
 		handleFrame();
-		driver.findElement(By.name("rental")).sendKeys("1000");
-		driver.findElement(By.name("local_minutes")).sendKeys("5000");
-		driver.findElement(By.name("inter_minutes")).sendKeys("200");
-		driver.findElement(By.name("sms_pack")).sendKeys("100");
-		driver.findElement(By.name("minutes_charges")).sendKeys("2");
-		driver.findElement(By.name("inter_charges")).sendKeys("50");
-		driver.findElement(By.name("sms_charges")).sendKeys("1");
+		Hooks.driver.findElement(By.name("rental")).sendKeys("1000");
+		Hooks.driver.findElement(By.name("local_minutes")).sendKeys("5000");
+		Hooks.driver.findElement(By.name("inter_minutes")).sendKeys("200");
+		Hooks.driver.findElement(By.name("sms_pack")).sendKeys("100");
+		Hooks.driver.findElement(By.name("minutes_charges")).sendKeys("2");
+		Hooks.driver.findElement(By.name("inter_charges")).sendKeys("50");
+		Hooks.driver.findElement(By.name("sms_charges")).sendKeys("1");
 	}
 	
 
@@ -59,13 +48,13 @@ static WebDriver driver;
 		handleFrame();
 		List<String> plan = datal.asList();
 
-		driver.findElement(By.name("rental")).sendKeys(plan.get(0));
-		driver.findElement(By.name("local_minutes")).sendKeys(plan.get(1));
-		driver.findElement(By.name("inter_minutes")).sendKeys(plan.get(2));
-		driver.findElement(By.name("sms_pack")).sendKeys(plan.get(3));
-		driver.findElement(By.name("minutes_charges")).sendKeys(plan.get(4));
-		driver.findElement(By.name("inter_charges")).sendKeys(plan.get(5));
-		driver.findElement(By.name("sms_charges")).sendKeys(plan.get(6));
+		Hooks.driver.findElement(By.name("rental")).sendKeys(plan.get(0));
+		Hooks.driver.findElement(By.name("local_minutes")).sendKeys(plan.get(1));
+		Hooks.driver.findElement(By.name("inter_minutes")).sendKeys(plan.get(2));
+		Hooks.driver.findElement(By.name("sms_pack")).sendKeys(plan.get(3));
+		Hooks.driver.findElement(By.name("minutes_charges")).sendKeys(plan.get(4));
+		Hooks.driver.findElement(By.name("inter_charges")).sendKeys(plan.get(5));
+		Hooks.driver.findElement(By.name("sms_charges")).sendKeys(plan.get(6));
 	}
 
 	
@@ -74,13 +63,13 @@ static WebDriver driver;
 		//handleFrame();
 		Map<String, String> planDetails = datam.asMap(String.class, String.class);
 
-		driver.findElement(By.name("rental")).sendKeys(planDetails.get("rental"));
-		driver.findElement(By.name("local_minutes")).sendKeys(planDetails.get("local_minutes"));
-		driver.findElement(By.name("inter_minutes")).sendKeys(planDetails.get("inter_minutes"));
-		driver.findElement(By.name("sms_pack")).sendKeys(planDetails.get("sms_pack"));
-		driver.findElement(By.name("minutes_charges")).sendKeys(planDetails.get("minutes_charges"));
-		driver.findElement(By.name("inter_charges")).sendKeys(planDetails.get("inter_charges"));
-		driver.findElement(By.name("sms_charges")).sendKeys(planDetails.get("sms_charges"));
+		Hooks.driver.findElement(By.name("rental")).sendKeys(planDetails.get("rental"));
+		Hooks.driver.findElement(By.name("local_minutes")).sendKeys(planDetails.get("local_minutes"));
+		Hooks.driver.findElement(By.name("inter_minutes")).sendKeys(planDetails.get("inter_minutes"));
+		Hooks.driver.findElement(By.name("sms_pack")).sendKeys(planDetails.get("sms_pack"));
+		Hooks.driver.findElement(By.name("minutes_charges")).sendKeys(planDetails.get("minutes_charges"));
+		Hooks.driver.findElement(By.name("inter_charges")).sendKeys(planDetails.get("inter_charges"));
+		Hooks.driver.findElement(By.name("sms_charges")).sendKeys(planDetails.get("sms_charges"));
 	
 	}
 	
@@ -89,13 +78,13 @@ static WebDriver driver;
 		//handleFrame();
 		List<List<String>> plan = datal.asLists();
 
-		driver.findElement(By.name("rental")).sendKeys(plan.get(2).get(0));
-		driver.findElement(By.name("local_minutes")).sendKeys(plan.get(0).get(1));
-		driver.findElement(By.name("inter_minutes")).sendKeys(plan.get(3).get(2));
-		driver.findElement(By.name("sms_pack")).sendKeys(plan.get(0).get(3));
-		driver.findElement(By.name("minutes_charges")).sendKeys(plan.get(1).get(4));
-		driver.findElement(By.name("inter_charges")).sendKeys(plan.get(3).get(5));
-		driver.findElement(By.name("sms_charges")).sendKeys(plan.get(2).get(6));
+		Hooks.driver.findElement(By.name("rental")).sendKeys(plan.get(2).get(0));
+		Hooks.driver.findElement(By.name("local_minutes")).sendKeys(plan.get(0).get(1));
+		Hooks.driver.findElement(By.name("inter_minutes")).sendKeys(plan.get(3).get(2));
+		Hooks.driver.findElement(By.name("sms_pack")).sendKeys(plan.get(0).get(3));
+		Hooks.driver.findElement(By.name("minutes_charges")).sendKeys(plan.get(1).get(4));
+		Hooks.driver.findElement(By.name("inter_charges")).sendKeys(plan.get(3).get(5));
+		Hooks.driver.findElement(By.name("sms_charges")).sendKeys(plan.get(2).get(6));
 	}
 
 	@When("User fills all the fields by using 2dim map")
@@ -103,13 +92,13 @@ static WebDriver driver;
 		handleFrame();
 		List<Map<String, String>> planDetails = datam.asMaps();
 		
-		driver.findElement(By.name("rental")).sendKeys(planDetails.get(0).get("rental"));
-		driver.findElement(By.name("local_minutes")).sendKeys(planDetails.get(3).get("local_minutes"));
-		driver.findElement(By.name("inter_minutes")).sendKeys(planDetails.get(2).get("inter_minutes"));
-		driver.findElement(By.name("sms_pack")).sendKeys(planDetails.get(0).get("sms_pack"));
-		driver.findElement(By.name("minutes_charges")).sendKeys(planDetails.get(1).get("minutes_charges"));
-		driver.findElement(By.name("inter_charges")).sendKeys(planDetails.get(3).get("inter_charges"));
-		driver.findElement(By.name("sms_charges")).sendKeys(planDetails.get(2).get("sms_charges"));
+		Hooks.driver.findElement(By.name("rental")).sendKeys(planDetails.get(0).get("rental"));
+		Hooks.driver.findElement(By.name("local_minutes")).sendKeys(planDetails.get(3).get("local_minutes"));
+		Hooks.driver.findElement(By.name("inter_minutes")).sendKeys(planDetails.get(2).get("inter_minutes"));
+		Hooks.driver.findElement(By.name("sms_pack")).sendKeys(planDetails.get(0).get("sms_pack"));
+		Hooks.driver.findElement(By.name("minutes_charges")).sendKeys(planDetails.get(1).get("minutes_charges"));
+		Hooks.driver.findElement(By.name("inter_charges")).sendKeys(planDetails.get(3).get("inter_charges"));
+		Hooks.driver.findElement(By.name("sms_charges")).sendKeys(planDetails.get(2).get("sms_charges"));
 	
 	}
 	
@@ -118,25 +107,25 @@ static WebDriver driver;
 		
 		handleFrame();
 		
-		driver.findElement(By.name("rental")).sendKeys(rental);
-		driver.findElement(By.name("local_minutes")).sendKeys(local);
-		driver.findElement(By.name("inter_minutes")).sendKeys(inter);
-		driver.findElement(By.name("sms_pack")).sendKeys(sms);
-		driver.findElement(By.name("minutes_charges")).sendKeys(minutecharge);
-		driver.findElement(By.name("inter_charges")).sendKeys(intercharge);
-		driver.findElement(By.name("sms_charges")).sendKeys(smscharge);
+		Hooks.driver.findElement(By.name("rental")).sendKeys(rental);
+		Hooks.driver.findElement(By.name("local_minutes")).sendKeys(local);
+		Hooks.driver.findElement(By.name("inter_minutes")).sendKeys(inter);
+		Hooks.driver.findElement(By.name("sms_pack")).sendKeys(sms);
+		Hooks.driver.findElement(By.name("minutes_charges")).sendKeys(minutecharge);
+		Hooks.driver.findElement(By.name("inter_charges")).sendKeys(intercharge);
+		Hooks.driver.findElement(By.name("sms_charges")).sendKeys(smscharge);
 	}
 	
 	@When("User click on Tariff submit button")
 	public void user_click_on_Tariff_submit_button() {
-	    driver.findElement(By.name("submit")).click();
+	    Hooks.driver.findElement(By.name("submit")).click();
 	}
 
 	@Then("User is displayed with the message tariff plan created")
 	public void user_is_displayed_with_the_message_tariff_plan_created() throws InterruptedException {
 		handleFrame();
-		Assert.assertTrue(driver.findElement(By.xpath("//h2[text()='Congratulation you add Tariff Plan']")).isDisplayed());
-		driver.quit();
+		Assert.assertTrue(Hooks.driver.findElement(By.xpath("//h2[text()='Congratulation you add Tariff Plan']")).isDisplayed());
+		Hooks.driver.quit();
 	}
 
 }

@@ -22,16 +22,16 @@ public class AddCustomerSteps {
 		
 		handleFrame();
 		
-		AddTariffplanSteps.driver.findElement(By.xpath("(//a[text()='Add Customer'])[1]")).click();
+		Hooks.driver.findElement(By.xpath("(//a[text()='Add Customer'])[1]")).click();
 	    
 	}
 	
 	public void handleFrame() throws InterruptedException {
 		
 	/*	 Thread.sleep(5000);
-		    AddTariffplanSteps.driver.switchTo().frame("flow_close_btn_iframe");
-		    AddTariffplanSteps.driver.findElement(By.xpath("//div[@id='closeBtn']")).click();
-		    AddTariffplanSteps.driver.switchTo().defaultContent();*/
+		    Hooks.driver.switchTo().frame("flow_close_btn_iframe");
+		    Hooks.driver.findElement(By.xpath("//div[@id='closeBtn']")).click();
+		    Hooks.driver.switchTo().defaultContent();*/
 
 	}
 
@@ -40,12 +40,12 @@ public class AddCustomerSteps {
 		
 		handleFrame();
 		
-		AddTariffplanSteps.driver.findElement(By.xpath("(//label[@for='done'])[1]")).click();
-		AddTariffplanSteps.driver.findElement(By.id("fname")).sendKeys("karthi");
-		AddTariffplanSteps.driver.findElement(By.id("lname")).sendKeys("rajan");
-		AddTariffplanSteps.driver.findElement(By.id("email")).sendKeys("krajan@gmail.com");
-		AddTariffplanSteps.driver.findElement(By.name("addr")).sendKeys("Thanjavur");
-		AddTariffplanSteps.driver.findElement(By.id("telephoneno")).sendKeys("1234556667");
+		Hooks.driver.findElement(By.xpath("(//label[@for='done'])[1]")).click();
+		Hooks.driver.findElement(By.id("fname")).sendKeys("karthi");
+		Hooks.driver.findElement(By.id("lname")).sendKeys("rajan");
+		Hooks.driver.findElement(By.id("email")).sendKeys("krajan@gmail.com");
+		Hooks.driver.findElement(By.name("addr")).sendKeys("Thanjavur");
+		Hooks.driver.findElement(By.id("telephoneno")).sendKeys("1234556667");
 	    
 	}
 	
@@ -56,12 +56,12 @@ public class AddCustomerSteps {
 		
              handleFrame();
 		
-		AddTariffplanSteps.driver.findElement(By.xpath("(//label[@for='done'])[1]")).click();
-		AddTariffplanSteps.driver.findElement(By.id("fname")).sendKeys(cusDetails.get(0));
-		AddTariffplanSteps.driver.findElement(By.id("lname")).sendKeys(cusDetails.get(1));
-		AddTariffplanSteps.driver.findElement(By.id("email")).sendKeys(cusDetails.get(2));
-		AddTariffplanSteps.driver.findElement(By.name("addr")).sendKeys(cusDetails.get(3));
-		AddTariffplanSteps.driver.findElement(By.id("telephoneno")).sendKeys(cusDetails.get(4));
+		Hooks.driver.findElement(By.xpath("(//label[@for='done'])[1]")).click();
+		Hooks.driver.findElement(By.id("fname")).sendKeys(cusDetails.get(0));
+		Hooks.driver.findElement(By.id("lname")).sendKeys(cusDetails.get(1));
+		Hooks.driver.findElement(By.id("email")).sendKeys(cusDetails.get(2));
+		Hooks.driver.findElement(By.name("addr")).sendKeys(cusDetails.get(3));
+		Hooks.driver.findElement(By.id("telephoneno")).sendKeys(cusDetails.get(4));
 		
 	}
 	
@@ -72,12 +72,12 @@ public class AddCustomerSteps {
 		
              handleFrame();
 		
-		AddTariffplanSteps.driver.findElement(By.xpath("(//label[@for='done'])[1]")).click();
-		AddTariffplanSteps.driver.findElement(By.id("fname")).sendKeys(cusDetails.get("fname"));
-		AddTariffplanSteps.driver.findElement(By.id("lname")).sendKeys(cusDetails.get("lname"));
-		AddTariffplanSteps.driver.findElement(By.id("email")).sendKeys(cusDetails.get("mail"));
-		AddTariffplanSteps.driver.findElement(By.name("addr")).sendKeys(cusDetails.get("add"));
-		AddTariffplanSteps.driver.findElement(By.id("telephoneno")).sendKeys(cusDetails.get("phno"));
+		Hooks.driver.findElement(By.xpath("(//label[@for='done'])[1]")).click();
+		Hooks.driver.findElement(By.id("fname")).sendKeys(cusDetails.get("fname"));
+		Hooks.driver.findElement(By.id("lname")).sendKeys(cusDetails.get("lname"));
+		Hooks.driver.findElement(By.id("email")).sendKeys(cusDetails.get("mail"));
+		Hooks.driver.findElement(By.name("addr")).sendKeys(cusDetails.get("add"));
+		Hooks.driver.findElement(By.id("telephoneno")).sendKeys(cusDetails.get("phno"));
 		
 	}
 	
@@ -88,12 +88,12 @@ public class AddCustomerSteps {
 		
 		 handleFrame();
 			
-			AddTariffplanSteps.driver.findElement(By.xpath("(//label[@for='done'])[1]")).click();
-			AddTariffplanSteps.driver.findElement(By.id("fname")).sendKeys(cusDetails.get(1).get(0));
-			AddTariffplanSteps.driver.findElement(By.id("lname")).sendKeys(cusDetails.get(1).get(1));
-			AddTariffplanSteps.driver.findElement(By.id("email")).sendKeys(cusDetails.get(1).get(2));
-			AddTariffplanSteps.driver.findElement(By.name("addr")).sendKeys(cusDetails.get(3).get(3));
-			AddTariffplanSteps.driver.findElement(By.id("telephoneno")).sendKeys(cusDetails.get(1).get(4));
+			Hooks.driver.findElement(By.xpath("(//label[@for='done'])[1]")).click();
+			Hooks.driver.findElement(By.id("fname")).sendKeys(cusDetails.get(1).get(0));
+			Hooks.driver.findElement(By.id("lname")).sendKeys(cusDetails.get(1).get(1));
+			Hooks.driver.findElement(By.id("email")).sendKeys(cusDetails.get(1).get(2));
+			Hooks.driver.findElement(By.name("addr")).sendKeys(cusDetails.get(3).get(3));
+			Hooks.driver.findElement(By.id("telephoneno")).sendKeys(cusDetails.get(1).get(4));
 		
 		
 	}
@@ -105,12 +105,12 @@ public class AddCustomerSteps {
 		
 		 handleFrame();
 			
-			AddTariffplanSteps.driver.findElement(By.xpath("(//label[@for='done'])[1]")).click();
-			AddTariffplanSteps.driver.findElement(By.id("fname")).sendKeys(cusDetails.get(2).get("Fname"));
-			AddTariffplanSteps.driver.findElement(By.id("lname")).sendKeys(cusDetails.get(1).get("Lname"));
-			AddTariffplanSteps.driver.findElement(By.id("email")).sendKeys(cusDetails.get(2).get("Mail"));
-			AddTariffplanSteps.driver.findElement(By.name("addr")).sendKeys(cusDetails.get(3).get("Address"));
-			AddTariffplanSteps.driver.findElement(By.id("telephoneno")).sendKeys(cusDetails.get(1).get("Phno"));
+			Hooks.driver.findElement(By.xpath("(//label[@for='done'])[1]")).click();
+			Hooks.driver.findElement(By.id("fname")).sendKeys(cusDetails.get(2).get("Fname"));
+			Hooks.driver.findElement(By.id("lname")).sendKeys(cusDetails.get(1).get("Lname"));
+			Hooks.driver.findElement(By.id("email")).sendKeys(cusDetails.get(2).get("Mail"));
+			Hooks.driver.findElement(By.name("addr")).sendKeys(cusDetails.get(3).get("Address"));
+			Hooks.driver.findElement(By.id("telephoneno")).sendKeys(cusDetails.get(1).get("Phno"));
 		
 		
 	}
@@ -121,12 +121,12 @@ public class AddCustomerSteps {
 		
 		 handleFrame();
 			
-			AddTariffplanSteps.driver.findElement(By.xpath("(//label[@for='done'])[1]")).click();
-			AddTariffplanSteps.driver.findElement(By.id("fname")).sendKeys(fname);
-			AddTariffplanSteps.driver.findElement(By.id("lname")).sendKeys(lname);
-			AddTariffplanSteps.driver.findElement(By.id("email")).sendKeys(mail);
-			AddTariffplanSteps.driver.findElement(By.name("addr")).sendKeys(address);
-			AddTariffplanSteps.driver.findElement(By.id("telephoneno")).sendKeys(phno);
+			Hooks.driver.findElement(By.xpath("(//label[@for='done'])[1]")).click();
+			Hooks.driver.findElement(By.id("fname")).sendKeys(fname);
+			Hooks.driver.findElement(By.id("lname")).sendKeys(lname);
+			Hooks.driver.findElement(By.id("email")).sendKeys(mail);
+			Hooks.driver.findElement(By.name("addr")).sendKeys(address);
+			Hooks.driver.findElement(By.id("telephoneno")).sendKeys(phno);
 		
 	    
 	}
@@ -136,7 +136,7 @@ public class AddCustomerSteps {
 	@When("User click on submit button")
 	public void user_click_on_submit_button() {
 		
-		AddTariffplanSteps.driver.findElement(By.xpath("(//input[@type='submit'])[1]")).click();
+		Hooks.driver.findElement(By.xpath("(//input[@type='submit'])[1]")).click();
 	    
 	}
 
@@ -145,7 +145,7 @@ public class AddCustomerSteps {
 		
 		handleFrame();
 		
-		Assert.assertTrue(AddTariffplanSteps.driver.findElement(By.xpath("(//td[@align='center'])[2]")).isDisplayed());
+		Assert.assertTrue(Hooks.driver.findElement(By.xpath("(//td[@align='center'])[2]")).isDisplayed());
 	    
 	}
 
