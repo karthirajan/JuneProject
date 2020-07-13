@@ -12,6 +12,7 @@ Feature: Add Customer
     And User click on submit button
     Then User should be displayed customer id is generated
 
+ @sanity @karthi
   Scenario: one dimensional list
     When User enters all the feilds by using 1dim list
       | soundar | rajan | sr@gmail.com | pvi | 8976436275 |

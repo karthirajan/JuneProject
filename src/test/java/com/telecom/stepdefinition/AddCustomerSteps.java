@@ -8,30 +8,35 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import com.telecom.objectrepository.AddCustomerPage;
+import com.telecom.resources.Commonactions;
+
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import io.cucumber.datatable.DataTable;
 
 
-public class AddCustomerSteps {
+public class AddCustomerSteps extends Commonactions{
 	
+	Commonactions ca = new Commonactions();
+	AddCustomerPage acp = new AddCustomerPage();
 	
 	@Given("User navigates into add customer page")
 	public void user_navigates_into_add_customer_page() throws InterruptedException {
 		
 		handleFrame();
 		
-		Hooks.driver.findElement(By.xpath("(//a[text()='Add Customer'])[1]")).click();
+	    ca.button(acp.getCustomerBtn());
 	    
 	}
 	
 	public void handleFrame() throws InterruptedException {
 		
 	/*	 Thread.sleep(5000);
-		    Hooks.driver.switchTo().frame("flow_close_btn_iframe");
-		    Hooks.driver.findElement(By.xpath("//div[@id='closeBtn']")).click();
-		    Hooks.driver.switchTo().defaultContent();*/
+		    driver.switchTo().frame("flow_close_btn_iframe");
+		    driver.findElement(By.xpath("//div[@id='closeBtn']")).click();
+		    driver.switchTo().defaultContent();*/
 
 	}
 
@@ -40,12 +45,12 @@ public class AddCustomerSteps {
 		
 		handleFrame();
 		
-		Hooks.driver.findElement(By.xpath("(//label[@for='done'])[1]")).click();
-		Hooks.driver.findElement(By.id("fname")).sendKeys("karthi");
-		Hooks.driver.findElement(By.id("lname")).sendKeys("rajan");
-		Hooks.driver.findElement(By.id("email")).sendKeys("krajan@gmail.com");
-		Hooks.driver.findElement(By.name("addr")).sendKeys("Thanjavur");
-		Hooks.driver.findElement(By.id("telephoneno")).sendKeys("1234556667");
+		ca.button(acp.getDoneBtn());
+		ca.insertText(acp.getFirstName(), "karthi");
+		ca.insertText(acp.getLastName(), "rajan");
+		ca.insertText(acp.getMail(), "karthirajan@gmail.com");
+		ca.insertText(acp.getAddress(), "chennai");
+		ca.insertText(acp.getPhno(), "676254242562");
 	    
 	}
 	
@@ -55,13 +60,15 @@ public class AddCustomerSteps {
 		List<String> cusDetails = datas.asList();
 		
              handleFrame();
+             
+             ca.button(acp.getDoneBtn());
+     		ca.insertText(acp.getFirstName(), cusDetails.get(0));
+     		ca.insertText(acp.getLastName(), cusDetails.get(1));
+     		ca.insertText(acp.getMail(), cusDetails.get(2));
+     		ca.insertText(acp.getAddress(), cusDetails.get(3));
+     		ca.insertText(acp.getPhno(), cusDetails.get(4));
 		
-		Hooks.driver.findElement(By.xpath("(//label[@for='done'])[1]")).click();
-		Hooks.driver.findElement(By.id("fname")).sendKeys(cusDetails.get(0));
-		Hooks.driver.findElement(By.id("lname")).sendKeys(cusDetails.get(1));
-		Hooks.driver.findElement(By.id("email")).sendKeys(cusDetails.get(2));
-		Hooks.driver.findElement(By.name("addr")).sendKeys(cusDetails.get(3));
-		Hooks.driver.findElement(By.id("telephoneno")).sendKeys(cusDetails.get(4));
+		
 		
 	}
 	
@@ -72,12 +79,12 @@ public class AddCustomerSteps {
 		
              handleFrame();
 		
-		Hooks.driver.findElement(By.xpath("(//label[@for='done'])[1]")).click();
-		Hooks.driver.findElement(By.id("fname")).sendKeys(cusDetails.get("fname"));
-		Hooks.driver.findElement(By.id("lname")).sendKeys(cusDetails.get("lname"));
-		Hooks.driver.findElement(By.id("email")).sendKeys(cusDetails.get("mail"));
-		Hooks.driver.findElement(By.name("addr")).sendKeys(cusDetails.get("add"));
-		Hooks.driver.findElement(By.id("telephoneno")).sendKeys(cusDetails.get("phno"));
+		driver.findElement(By.xpath("(//label[@for='done'])[1]")).click();
+		driver.findElement(By.id("fname")).sendKeys(cusDetails.get("fname"));
+		driver.findElement(By.id("lname")).sendKeys(cusDetails.get("lname"));
+		driver.findElement(By.id("email")).sendKeys(cusDetails.get("mail"));
+		driver.findElement(By.name("addr")).sendKeys(cusDetails.get("add"));
+		driver.findElement(By.id("telephoneno")).sendKeys(cusDetails.get("phno"));
 		
 	}
 	
@@ -88,12 +95,12 @@ public class AddCustomerSteps {
 		
 		 handleFrame();
 			
-			Hooks.driver.findElement(By.xpath("(//label[@for='done'])[1]")).click();
-			Hooks.driver.findElement(By.id("fname")).sendKeys(cusDetails.get(1).get(0));
-			Hooks.driver.findElement(By.id("lname")).sendKeys(cusDetails.get(1).get(1));
-			Hooks.driver.findElement(By.id("email")).sendKeys(cusDetails.get(1).get(2));
-			Hooks.driver.findElement(By.name("addr")).sendKeys(cusDetails.get(3).get(3));
-			Hooks.driver.findElement(By.id("telephoneno")).sendKeys(cusDetails.get(1).get(4));
+			driver.findElement(By.xpath("(//label[@for='done'])[1]")).click();
+			driver.findElement(By.id("fname")).sendKeys(cusDetails.get(1).get(0));
+			driver.findElement(By.id("lname")).sendKeys(cusDetails.get(1).get(1));
+			driver.findElement(By.id("email")).sendKeys(cusDetails.get(1).get(2));
+			driver.findElement(By.name("addr")).sendKeys(cusDetails.get(3).get(3));
+			driver.findElement(By.id("telephoneno")).sendKeys(cusDetails.get(1).get(4));
 		
 		
 	}
@@ -105,12 +112,12 @@ public class AddCustomerSteps {
 		
 		 handleFrame();
 			
-			Hooks.driver.findElement(By.xpath("(//label[@for='done'])[1]")).click();
-			Hooks.driver.findElement(By.id("fname")).sendKeys(cusDetails.get(2).get("Fname"));
-			Hooks.driver.findElement(By.id("lname")).sendKeys(cusDetails.get(1).get("Lname"));
-			Hooks.driver.findElement(By.id("email")).sendKeys(cusDetails.get(2).get("Mail"));
-			Hooks.driver.findElement(By.name("addr")).sendKeys(cusDetails.get(3).get("Address"));
-			Hooks.driver.findElement(By.id("telephoneno")).sendKeys(cusDetails.get(1).get("Phno"));
+			driver.findElement(By.xpath("(//label[@for='done'])[1]")).click();
+			driver.findElement(By.id("fname")).sendKeys(cusDetails.get(2).get("Fname"));
+			driver.findElement(By.id("lname")).sendKeys(cusDetails.get(1).get("Lname"));
+			driver.findElement(By.id("email")).sendKeys(cusDetails.get(2).get("Mail"));
+			driver.findElement(By.name("addr")).sendKeys(cusDetails.get(3).get("Address"));
+			driver.findElement(By.id("telephoneno")).sendKeys(cusDetails.get(1).get("Phno"));
 		
 		
 	}
@@ -121,12 +128,12 @@ public class AddCustomerSteps {
 		
 		 handleFrame();
 			
-			Hooks.driver.findElement(By.xpath("(//label[@for='done'])[1]")).click();
-			Hooks.driver.findElement(By.id("fname")).sendKeys(fname);
-			Hooks.driver.findElement(By.id("lname")).sendKeys(lname);
-			Hooks.driver.findElement(By.id("email")).sendKeys(mail);
-			Hooks.driver.findElement(By.name("addr")).sendKeys(address);
-			Hooks.driver.findElement(By.id("telephoneno")).sendKeys(phno);
+			driver.findElement(By.xpath("(//label[@for='done'])[1]")).click();
+			driver.findElement(By.id("fname")).sendKeys(fname);
+			driver.findElement(By.id("lname")).sendKeys(lname);
+			driver.findElement(By.id("email")).sendKeys(mail);
+			driver.findElement(By.name("addr")).sendKeys(address);
+			driver.findElement(By.id("telephoneno")).sendKeys(phno);
 		
 	    
 	}
@@ -136,7 +143,7 @@ public class AddCustomerSteps {
 	@When("User click on submit button")
 	public void user_click_on_submit_button() {
 		
-		Hooks.driver.findElement(By.xpath("(//input[@type='submit'])[1]")).click();
+		ca.button(acp.getSubmitBtn());
 	    
 	}
 
@@ -145,7 +152,7 @@ public class AddCustomerSteps {
 		
 		handleFrame();
 		
-		Assert.assertTrue(Hooks.driver.findElement(By.xpath("(//td[@align='center'])[2]")).isDisplayed());
+		Assert.assertTrue(acp.getSuccessMessage().isDisplayed());
 	    
 	}
 
