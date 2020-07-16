@@ -11,7 +11,7 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(features="src//test//resources//Features",
                   glue="com.telecom.stepdefinition",
                   dryRun=false,
-                  plugin="html:target//Cucumber-html-reports",
+                  plugin={"html:target//Cucumber-html-reports","json:target/reports.json"},
                   monochrome=true,
                   tags={"@sanity,@karthi"})
 
