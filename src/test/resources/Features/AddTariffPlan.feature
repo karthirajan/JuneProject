@@ -49,7 +49,7 @@ Feature: Add Tariff Plan
     And User click on Tariff submit button
     Then User is displayed with the message tariff plan created
 
-@sanity
+
   Scenario Outline: using outline
     And User navigates into tariff plan page
     When User fills all the fields "<rental>","<local_minutes>","<inter_minutes>","<sms_pack>","<minutes_charges>","<inter_charges>","<sms_charges>",
